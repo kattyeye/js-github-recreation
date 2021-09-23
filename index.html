@@ -5,15 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GitHub Recreation JS</title>
+
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <div class="container">
-        <script id="repos-template" type="text/x-handlebars-template">
-{{#each name}}
-        <div><h2>{{this.name}}</h2></div>
-{{/each}}
-    </script>
+<div class="github-bio">
+                <script id="git-bio-template" type="text/x-handlebars-template">
+                    <div><img src="{{this.avatar_url}}" alt="" /></div>
+                    <div><p>{{this.login}}</p></div>
+                    <div><p>{{this.followers}}</p></div>
+                    <div><p>{{this.following}}</p></div>
+                </script>
+            </div>
+
+            <div class="repo-container">
+                <script id="git-repo-template" type="text/x-handlebars-template">
+                        <div><p>{{this.name}}</p></div>
+                </script>
+            </div>
     </div>
+
+     <!-- <script id="avatar" type="text/x-handlebars-template">
+            <img src="{{this.image}}" alt="">
+     </script> -->
+
 
 
     <script
