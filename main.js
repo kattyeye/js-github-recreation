@@ -6,9 +6,7 @@
 
      const userFetch = fetch(`https://api.github.com/users/kattyeye`)
             .then((response) => response.json())
-    .then((data) => generateHTML(data))
-
-
+            .then((data) => generateHTML(data))
 
 
     const repoFetch = fetch(`https://api.github.com/users/kattyeye/repos`)
@@ -28,7 +26,8 @@
     const allData = Promise.all([
         userFetch, repoFetch, followersFetch, followingFetch,
     ])
-    allData.then((data) => {
+
+    allData.then(() => {
         const generateHTML = (data) => {
             const source = document.querySelector("#git-bio-template").innerHTML;
             const template = Handlebars.compile(source);
@@ -42,7 +41,7 @@
         const template = Handlebars.compile(source);
         const html = template(data);
         console.log(data)
-        document.querySelector(".container").innerHTML = html;
+        document.querySelector(".repo-container").innerHTML = html;
     };
     })
 

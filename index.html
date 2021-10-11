@@ -9,18 +9,31 @@
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <div class="container">
-<div class="github-bio"></div>
-            <div class="repo-container"></div>
+    <nav>
+          <ul>
+            <li>Overview</li>
+            <li>Repositories</li>
+            <li>Projects</li>
+            <li>Packages</li>
+          </ul>
+        </nav>
 
-    </div>
+    <div class="container">
+<!-- <div class="github-bio"></div> -->
+
+
+            </div>
+             <div class="repo-container"></div>
     <script id="git-repo-template" type="text/x-handlebars-template">
-                    <!-- {{#each repos}}
-                    <div><p>{{this.name}}</p></div>
-                    {{/each}} -->
+                    {{#each repos}}
+                    <h2 class="name"><p>{{this.name}}</p></h2>
+                    <div><p>{{this.private}}</p></div>
+                    <div><p>{{this.language}}</p></div>
+                    {{/each}}
     </script>
         <script id="git-bio-template" type="text/x-handlebars-template">
                 <div><img src="{{this.avatar_url}}" alt="" /></div>
+                <h2 class="name"><p>{{this.name}}</p></h2>
                 <div><p>{{this.login}}</p></div>
                 <div><p>{{this.followers}}</p></div>
                 <div><p>{{this.following}}</p></div>
@@ -37,6 +50,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="./main.js" async></script>
+    <script src="./main copy.js" async></script>
   </body>
 </html>
